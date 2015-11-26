@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+<<<<<<< HEAD
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -23,3 +24,11 @@ urlpatterns = [
 	url(r'^$','movietalkie.views.home',name='home'),
     url(r'^admin/', include(admin.site.urls)),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+=======
+
+urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
+    
+
+]
+>>>>>>> d861c200675f883c94336767e5dbd53d5344a47b

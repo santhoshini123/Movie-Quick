@@ -20,7 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'xe-a3w(x-6t5=byi4!7n!=x*@##b%x6y+6amqw^h&kl2z6q5p='
+=======
+SECRET_KEY = 'ghgvb6ad_y9=0v@=-pnfe8_603rsb5@8(y0v(7a=u0aakn^#^8'
+>>>>>>> d861c200675f883c94336767e5dbd53d5344a47b
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +41,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'movietalkie',
+=======
+    'movie',
+>>>>>>> d861c200675f883c94336767e5dbd53d5344a47b
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,7 +64,11 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [os.path.join(BASE_DIR, "Templates")],
+=======
+        'DIRS': [],
+>>>>>>> d861c200675f883c94336767e5dbd53d5344a47b
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
