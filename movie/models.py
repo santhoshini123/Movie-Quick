@@ -10,4 +10,13 @@ class SignUp(models.Model):
 class Movie(models.Model):
 	movie = models.CharField(max_length = 200)
 	year = models.IntegerField(default = 0)
-	no_of_shows = models.IntegerField(default = 0)
+	hero = models.CharField(max_length = 150,default = 0)
+	heroine = models.CharField(max_length = 150,default = 0)
+	director = models.CharField(max_length = 150,default = 0)
+	producer = models.CharField(max_length = 150,default = 0)
+	Sensor_rating = models.FloatField(default = 0)
+
+	
+	
+
+
