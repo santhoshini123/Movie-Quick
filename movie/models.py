@@ -6,6 +6,7 @@ class SignUp(models.Model):
 	Password = models.CharField(max_length = 10, blank = False, null = True)
 	Re_Enter_password = models.CharField(max_length = 10, blank = True, null = False)
 	timestamp = models.DateTimeField(auto_now_add = True, auto_now = False)
+	# phone_number = models.InegerField(max_length = 100)
 class Hero(models.Model):
 	hero_name = models.CharField(max_length = 150)
 	def __str__(self):
