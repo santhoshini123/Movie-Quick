@@ -1,7 +1,7 @@
 html {
 	/*background: url('movies.jpg');*/
 	font-size: 10pt;
-	background: url(images/download.jpg);
+	background: url("download.jpg");
         /*-webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -54,8 +54,8 @@ label {
 				0px 1px 0px 0px rgba(250, 250, 250, 0.5) ;
 }
 html {
-	background: url('images/download.jpg');
-	font-size: 10pt;
+	/*background: url('download.jpg');
+	font-size: 10pt;*/
 	/*background: url(download.jpg) no-repeat center center fixed;*/
        /* -webkit-background-size: cover;
         -moz-background-size: cover;
