@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type = "text/css" href="{% static 'style.css' %}" />
+
+
+</head>
+<body>
+	<section class="loginform cf">
+		<form name="register" action="home/" method="get" accept-charset="utf-8">
+			<ul>
+				<li>
+					<label for="First Name">First Name</label>
+					<input type="name" name="firstname" placeholder="First name" required>
+				</li>
+				<li>
+					<label for="Last name">Last Name</label>
+					<input type="name" name="lastname" placeholder = "Last name" required>
+				</li>
+				<br>
+				<li>
+					<label for="usermail">Email</label>
+					<input type="email" name="usermail" placeholder="yourname@email.com" required>
+				</li>
+				<br>
+				<li>
+					<label for="number">Phone-Number</label>
+					<input type="number" name="usernumber" placeholder = "Phone-Number" required>
+				</li>
+				<br>
+				<li>
+					<label for="password">create Password</label>
+					<input type="password" name="password" placeholder = "Password" required>
+				</li>
+
+				<li>
+					<label for="password">Re-enter Password</label>
+					<input type="password" name="password" placeholder = "Re_Enter Password" required>
+				</li>
+
+				<li>
+					<label for="gender">Gender</label>
+					<input type = "radio" name = "sex" value = "male" > Male
+					<input type = "radio" name = "sex" value = "female"> Female
+				</li>
+				<br>
+					<br>
+					<br>
+					<li>
+			<br><br><Br>
+				<input type = "submit" id = "submit" onclick="validate()" value= "Register" href="index.html">
+				<br>
+		</li>
+			</ul>
+		</form>
+	</section>
+	<section class="loginform cf">
+		<form name="login" action="index_submit" method="get" accept-charset="utf-8">
+			<ul>
+				<li>
+					<label for="usermail">Email</label>
+					<input type="email" name="usermail" placeholder="yourname@email.com">
+				</li>
+				<li>
+					<label for="password">Password</label>
+					<input type="password" name="password" placeholder="password" ></li>
+				<li>
+				<br>
+					<input type="submit" value="Login">
+				</li>
+			</ul>
+		</form>
+	</section>
+	<script>
+  	function senddata(){
+  			$.ajax({
+            url : "/movie/validate/", // the endpoint
+            type : "GET", // http method
+            data : {First_name:$("#First_name").val(),
+                 Last_name:$("#Last_name").val(),
+                 Email:$("#Email").val(),
+                 Phone_Number:$("Phone_Number").val(),
+                 password:$("#password").val(),
+                  
+             }, // data sent with the post request
+            // handle a successful response
+            success : function(json) {
+                alert(json);
+                console.log(json); // log the console.log("success"); // another sanity check
+                $("#First_name").val('');
+                $("#Last_name").val('');
+                $("#Email").val('');
+                $("#phnum").val('');
+                $("#password").val('');
+
+
+            },
+            // handle a non-successful response
+            error : function(xhr,errmsg,err) {
+                $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                    " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            }
+        });
+  		};
+  </script>
+</body>
+</html>

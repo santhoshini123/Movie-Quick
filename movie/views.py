@@ -1,6 +1,46 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,render_to_response
+from django.http import HttpResponse
+from django.conf import settings
+from django.template import RequestContext, loader
+import json
+from .models import SignUp
 # Create your views here.
+
+def index(request):
+	return render(request, 'movie/register.html')
+
 def register(request):
-	return render(request, "register.html")
+	return render(request,'register.html')
+
+
+def validate(request):
+	First_name=request.GET.get('firstname')
+	Last_name=request.GET.get('lastname')
+	Email=request.GET.get('usermail')
+	password=request.GET.get('password')
+	# Re_enter_password=request.GET.get('Re_enter_password')
+	response = {}
+	if not SignUp.objects.filter(Email=Email):
+		m = SignUp(First_name=First_name,Last_name=Last_name,Email=Email,Password=password)
+		m.save()
+		response['status']='success'
+	else:
+		response['status']='failure'
+	json_data = json.dumps(response)
+	return HttpResponse(json_data,content_type="application/json")
+
+def validatelogin(request):
+    Email=request.POST.get('Email')
+    password=request.POST.get('password')
+    if movie.objects.filter(Email=Email,password=password):
+        mov=movie.objects.filter(Email=Email,password=password)
+        template = loader.get_template('movie/register.html')
+        context = RequestContext(request, {
+            'movie': movie,
+        })
+        return HttpResponse(template.render(context))
+    else:
+        return render_to_response('movie/register.html')
+
+
  
