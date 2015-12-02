@@ -4,7 +4,12 @@
 	<title>Register</title>
 	{% load staticfiles %}
 	<link rel="stylesheet" type = "text/css" href="{% static 'style.css' %}" />
+<<<<<<< HEAD
 	
+=======
+
+
+>>>>>>> ce9d6cf5dc1a52392c88f3d04c3dc7bf193ba42c
 </head>
 <body>
 	<section class="loginform cf">
@@ -56,6 +61,7 @@
 		</form>
 	</section>
 	<section class="loginform cf">
+<<<<<<< HEAD
 		<form name="login" action="/movie/validatelogin/" method="POST" accept-charset="utf-8">{%csrf_token%}
 			<!-- {{state}}
 			{{form.as_p}}
@@ -69,6 +75,10 @@
 			<input type="submit" value="Login">
 				
 			<!-- <ul>
+=======
+		<form name="login" action="index_submit" method="get" accept-charset="utf-8">
+			<ul>
+>>>>>>> ce9d6cf5dc1a52392c88f3d04c3dc7bf193ba42c
 				<li>
 					<label for="usermail">Email</label>
 					<input type="email" name="usermail" placeholder="yourname@email.com">
@@ -80,7 +90,11 @@
 				<br>
 					<input type="submit" value="Login">
 				</li>
+<<<<<<< HEAD
 			</ul> -->
+=======
+			</ul>
+>>>>>>> ce9d6cf5dc1a52392c88f3d04c3dc7bf193ba42c
 		</form>
 	</section>
 	<script>
